@@ -3,6 +3,18 @@
 This course emphasizes what developers need to know about SQL. Students go through ample practice with nested selects and joins, loading pre-existing datasets into a sql database using the shell, locating and fixing errors in a table, understanding foreign keys and relationships between entities, and creating tables of appropriate data types. An intro to noSQL is also given, with some basic exercises. This course also serves as a Node.JS introduction and AJAX refresher, as students develop CRUD APIs on nodeJS working on a SQL database as well as on noSQL.
 
 ##Summary
+1. Intro and mariaDB shell, database terms, creating tables and inserting data
+2. Select intro, nesting selects intro
+3. Nesting Selects, Select Distinct, computed columns, intro to joins
+4. Build CRUD application
+5. Exam 1
+6. DB Theory - normalization, entities, etc
+7. Joins Review and unions
+8. Joins Practice and exam 2
+9. Intro to Mongo
+10. Mongo part 2, introducing mongoose
+11. Mongoose Crud application
+12. Unit Final Exam
 
 
 
