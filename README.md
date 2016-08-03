@@ -108,7 +108,7 @@ SELECT * from (SELECT investor_name, SUM(raised_amount_usd) AS "investment" from
 
 1. CRUD in the [mongoshell](https://docs.mongodb.com/manual/reference/operator/query)
 
-2. Find, field selection, gt, lt, exist, type, querying inside of arrays,  in, all, dot notation, where
+2. Find, field selection, gt, lt, exist, querying inside of arrays, in, all, dot notation, where
 
 3. Unguided: Do Mongo Shell exercises on MongoU
 
@@ -118,9 +118,11 @@ SELECT * from (SELECT investor_name, SUM(raised_amount_usd) AS "investment" from
 
   1. Prototype refresher on codeschool
   2. Explain the concepts of Schemas and Models
-  3. Review objects and how mongo has keywords
+  >In mongoose, a schema represents the structure of a particular document, either completely or just a portion of the document. It's a way to express expected properties and values as well as constraints and indexes. A model defines a programming interface for interacting with the database (read, insert, update, etc). So a schema answers "what will the data in this collection look like?" and a model provides functionality like "Are there any records matching this query?" or "Add a new document to the collection".
+
+  3. Review objects and how mongoose has keywords
   4. Setup a Project
-  5. Develop Schemas and check the mongoshell
+  5. Develop Schemas and check the mongo shell
 
 2. [Design Book Schemas](https://www.udemy.com/mongoosejs-essentials)
 
