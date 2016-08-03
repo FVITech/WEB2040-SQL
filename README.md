@@ -103,4 +103,27 @@ SELECT * from (SELECT investor_name, SUM(raised_amount_usd) AS "investment" from
           WHERE foo.investment > 0
 
 
-## Day 9: Query and Projection Operators
+## Day 9: [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
+
+
+1. CRUD in the  [mongoshell](https://gist.github.com/ajgappmark/52236815b88307e94747)
+
+2. Find, field selection, gt, lt, exist, type, querying inside of arrays,  in, all, dot notation, where
+
+3. Unguided: Do Mongo Shell exercises on MongoU
+
+## Day 10: Mongoose and Schema Design
+
+1. [Design User Model](scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications)
+
+  1. Prototype refresher on codeschool
+  2. Explain the concepts of Schemas and Models
+  3. Review objects and how mongo has keywords
+  4. Setup a Project
+  5. Develop Schemas and check the mongoshell
+
+2. [Design Book Schemas](https://www.udemy.com/mongoosejs-essentials)
+
+3. Unguided: [Kitten Schemas ](http://mongoosejs.com/docs/)
+
+## Day 11: [Designing Mongoose REST API](http://adrianmejia.com/blog/2014/10/01/creating-a-restful-api-tutorial-with-nodejs-and-mongodb/):
