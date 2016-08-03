@@ -101,3 +101,6 @@ activity in Miami. The type of investor is in the funding_round_type column. Sho
 SELECT * from (SELECT investor_name, SUM(raised_amount_usd) AS "investment" from tutorial.crunchbase_investments
           group by investor_name order by investment desc) AS foo
           WHERE foo.investment > 0
+
+
+## Day 9: Query and Projection Operators
