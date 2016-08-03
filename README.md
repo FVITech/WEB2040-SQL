@@ -106,7 +106,7 @@ SELECT * from (SELECT investor_name, SUM(raised_amount_usd) AS "investment" from
 ## Day 9: [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
 
 
-1. CRUD in the  [mongoshell](https://gist.github.com/ajgappmark/52236815b88307e94747)
+1. CRUD in the [mongoshell](https://docs.mongodb.com/manual/reference/operator/query)
 
 2. Find, field selection, gt, lt, exist, type, querying inside of arrays,  in, all, dot notation, where
 
