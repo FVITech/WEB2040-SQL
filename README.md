@@ -115,6 +115,8 @@ Build a CRUD API with node. In the past, we've done a todo app and a fundraising
 
 Finish the front end that ties into the CRUD api which was written on the previous day. Teach students how to set up a git remote in their FVI digital ocean space. Have students deploy their applications, run them from the remote server, polish their front ends, make changes to their front ends so that they work by connecting to the fvi-grad remote, and take a [formative assessment](quiz1.md).
 
+**Also make sure to discuss the three servers involved in this application: apache, node, mysql.**
+
 
 ##Day 5
 Selecting Distinct records from a table:
@@ -176,8 +178,26 @@ Selecting Distinct records from a table:
 
 13. (Unguided) Use the same above table to categorize acquisitions in sizes: 1 billion is "tres comas club", 500 million and up are "ballers", and the others are "little poor companies"
 
-14. Joins: 		Explain that inner join is the default join and how it behaves; attaches the corresponding row on the joined table to the right hand side of the from table, based on join condition. Rows with no match are left out. Inner join is a mathematical intersection. Show how an inner join works based on this simple example:
-![Students and Teams](Team.png)
+14. Joins: Explain that inner join is the default join and how it behaves; attaches the corresponding row on the joined table to the right hand side of the from table, based on join condition. Rows with no match are left out. Inner join is a mathematical intersection. Show how an inner join works based on this simple example:
+  ![Students and Teams](Team.png)
+  SELECT * FROM students
+  JOIN teams
+  ON students.favorite_team = teams.team
+
+  Talk about what this query would produce.
+
+15. General Recipe for Join Syntax:
+  ![Join Recipe](join.png)
+
+16. Take a look at these two tables: benn.college_football_players and benn.college_football_teams. What if you wanted the player's data plus his team's division and conference in the same table? You need a join.
+  SELECT plyrs.full_school_name, plyrs.player_name, plyrs.hometown, plyrs.state,  teamz.division, teamz.conference
+  from benn.college_football_players plyrs
+  JOIN benn.college_football_teams teamz
+  ON plyrs.school_name = teamz.school_name
+  limit 450
+
+17. (Unguided) Consider the same two tables as above. For each college football team, show the team name, division, and average height of all team members.
+
 
 
 ## Day 9: [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
