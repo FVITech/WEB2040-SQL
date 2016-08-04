@@ -113,7 +113,7 @@ Build a CRUD API with node. In the past, we've done a todo app and a fundraising
 
 ##Day 4
 
-Finish the front end that ties into the CRUD api which was written on the previous day. Teach students how to set up a git remote in their FVI digital ocean space. Have students deploy their applications, polish their front ends, and take a [formative assessment](quiz1.md).
+Finish the front end that ties into the CRUD api which was written on the previous day. Teach students how to set up a git remote in their FVI digital ocean space. Have students deploy their applications, run them from the remote server, polish their front ends, make changes to their front ends so that they work by connecting to the fvi-grad remote, and take a [formative assessment](quiz1.md).
 
 
 ## Day 9: [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
