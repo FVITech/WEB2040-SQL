@@ -14,7 +14,7 @@
    - elipses: finish code or hit enter twice
 
 
-- CRUD => save, find, findOneAndUpdate, remove
+- CRUD => save, find, update, remove
    - Create documents:
    ```js
     use video;
@@ -44,7 +44,10 @@
    ```js
    db.movies.remove({title: "Jaws"})
    ```
-
+<h1 style='color:red'> WARNING: Cleans out the DB</h1>
+    ```js
+    db.movies.remove({})
+    ```
 - Query Operators: all operators start with a $ sign and need to go in there own braces
   - Greater/Less than
   ```js
@@ -136,9 +139,13 @@
       db.catalog.find({price:{$gt: 10000}, 'reviews.rating'{$gte: 5}})
       ```
 
-  - $push, $pop, $pull, $pushAll, $pullAll, 
+  - $push, $pop, $pull, $pushAll, $pullAll,
 
 
+- More Remove
+  ```js
+  db.people.remove({name:{$gt:'M'}})
+  ```
 
   ## Bonus: Aggregation Framework:
   Shape your data inside the database engine
