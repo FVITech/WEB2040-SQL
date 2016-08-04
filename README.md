@@ -227,6 +227,7 @@ Complete however much is left of the [khan academy joins section](https://www.kh
 
 
 
+
 ## Day 9: [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
 
 
@@ -253,3 +254,4 @@ Complete however much is left of the [khan academy joins section](https://www.kh
 3. Unguided: [Kitten Schemas ](http://mongoosejs.com/docs/)
 
 ## Day 11: [Designing Mongoose REST API](http://adrianmejia.com/blog/2014/10/01/creating-a-restful-api-tutorial-with-nodejs-and-mongodb/):
+>>>>>>> c40be08020a104946531d74736d0a0c77ad76ecc
