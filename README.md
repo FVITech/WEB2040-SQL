@@ -103,4 +103,31 @@ SELECT * from (SELECT investor_name, SUM(raised_amount_usd) AS "investment" from
           WHERE foo.investment > 0
 
 
-## Day 9: Query and Projection Operators
+
+## Day 9: [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
+
+
+1. CRUD in the [mongoshell](https://docs.mongodb.com/manual/reference/operator/query)
+
+2. Find, field selection, gt, lt, exist, querying inside of arrays, in, all, dot notation, where
+
+3. Unguided: Do Mongo Shell exercises on MongoU
+
+## Day 10: Mongoose and Schema Design
+
+1. [Design User Model](scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications)
+
+  1. Prototype refresher on codeschool
+  2. Explain the concepts of Schemas and Models
+  >In mongoose, a schema represents the structure of a particular document, either completely or just a portion of the document. It's a way to express expected properties and values as well as constraints and indexes. A model defines a programming interface for interacting with the database (read, insert, update, etc). So a schema answers "what will the data in this collection look like?" and a model provides functionality like "Are there any records matching this query?" or "Add a new document to the collection".
+
+  3. Review objects and how mongoose has keywords
+  4. Setup a Project
+  5. Develop Schemas and check the mongo shell
+
+2. [Design Book Schemas](https://www.udemy.com/mongoosejs-essentials)
+
+3. Unguided: [Kitten Schemas ](http://mongoosejs.com/docs/)
+
+## Day 11: [Designing Mongoose REST API](http://adrianmejia.com/blog/2014/10/01/creating-a-restful-api-tutorial-with-nodejs-and-mongodb/):
+>>>>>>> c40be08020a104946531d74736d0a0c77ad76ecc
