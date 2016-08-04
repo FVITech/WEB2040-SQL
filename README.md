@@ -102,11 +102,8 @@ activity in Miami. The type of investor is in the funding_round_type column. Sho
                                   WHERE company_name = 'Brightstar'
                                   group by company_name)
   order by raised_amount desc
-18. Use the tutorial.crunchbase_investments table to find the 10 investors with the most money invested:
-  SELECT * from (SELECT investor_name, SUM(raised_amount_usd) AS "investment"
-  from tutorial.crunchbase_investments
-          group by investor_name order by investment desc) AS foo
-          WHERE foo.investment > 0
+18. Use the tutorial.crunchbase_investments table to find the investors who have invested more money than "Silver Lake Partners"
+
 
 19. Use sqlzoo.net to practice nested selects and the sum and count sections. Students will complete at their own pace.
 
@@ -117,3 +114,31 @@ Build a CRUD API with node. In the past, we've done a todo app and a fundraising
 ##Day 4
 
 Finish the front end that ties into the CRUD api which was written on the previous day. Teach students how to set up a git remote in their FVI digital ocean space. Have students deploy their applications, polish their front ends, and take a [formative assessment](quiz1.md).
+
+
+## Day 9: [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
+
+
+1. CRUD in the [mongoshell](https://docs.mongodb.com/manual/reference/operator/query)
+
+2. Find, field selection, gt, lt, exist, querying inside of arrays, in, all, dot notation, where
+
+3. Unguided: Do Mongo Shell exercises on MongoU
+
+## Day 10: Mongoose and Schema Design
+
+1. [Design User Model](scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications)
+
+  1. Prototype refresher on codeschool
+  2. Explain the concepts of Schemas and Models
+  >In mongoose, a schema represents the structure of a particular document, either completely or just a portion of the document. It's a way to express expected properties and values as well as constraints and indexes. A model defines a programming interface for interacting with the database (read, insert, update, etc). So a schema answers "what will the data in this collection look like?" and a model provides functionality like "Are there any records matching this query?" or "Add a new document to the collection".
+
+  3. Review objects and how mongoose has keywords
+  4. Setup a Project
+  5. Develop Schemas and check the mongo shell
+
+2. [Design Book Schemas](https://www.udemy.com/mongoosejs-essentials)
+
+3. Unguided: [Kitten Schemas ](http://mongoosejs.com/docs/)
+
+## Day 11: [Designing Mongoose REST API](http://adrianmejia.com/blog/2014/10/01/creating-a-restful-api-tutorial-with-nodejs-and-mongodb/):
