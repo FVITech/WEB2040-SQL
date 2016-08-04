@@ -116,6 +116,70 @@ Build a CRUD API with node. In the past, we've done a todo app and a fundraising
 Finish the front end that ties into the CRUD api which was written on the previous day. Teach students how to set up a git remote in their FVI digital ocean space. Have students deploy their applications, run them from the remote server, polish their front ends, make changes to their front ends so that they work by connecting to the fvi-grad remote, and take a [formative assessment](quiz1.md).
 
 
+##Day 5
+Selecting Distinct records from a table:
+1. (Guided) Using the benn.movie_awards table, figure out how many different types of awards are covered by this data.
+  SELECT distinct award_type from benn.movie_awards
+
+2. (Guided) Figure out how many of each award has been given out. Take into account there are multiple rows per award and nomination.
+  ```sql
+  SELECT award_type, count(*) as num_awards from
+        (SELECT DISTINCT film_name, award_type, category
+            from benn.movie_awards
+            WHERE winner = 'true') as res1
+  group by award_type
+  order by num_awards desc
+  ```
+3. (Unguided) Consider the table with Apple's historical stock prices: tutorial.aapl_historical_stock_price. Write a query which lists the years that this data covers. Use SELECT DISTINCT so that years arent repeated.
+
+4. (Guided) We can use SELEct DISTINCT to identify distinct unique combinations of data. For example, what if we want to select each unique year, month combination from apple's stock price?
+  SELECT DISTINCT year, month
+  FROM tutorial.aapl_historical_stock_price
+
+5. An estimate for the total amount of money which changed hands in a given day from stock sales can be found by multiplying the **volume** of shares sold times the closing price. Find the total amount of money which changed hands from Apple stock sales since 2008.
+
+6. (Unguided) Back to the benn.movie_awards table, write a query which yields the count of film stars which have won awards. An actor or actress should not be counted multiple times for winning multiple awards.
+
+7. Discuss case statement: You may need a computed value for a column. Example: in the table benn.college_football_players, classify all the players by weight classes:
+  * Players above 250lbs are "fluffy"
+  * From 201 to 250lbs they are "Swole"
+  * Between 175 and 200lbs they are "Athletic"
+  * Under 175 they are "Flyweight"
+
+  Show the player's name, weight, and weight class
+  SELECT player_name,
+       weight,
+       CASE WHEN weight > 250 THEN 'over 250'
+            WHEN weight > 200 AND weight <= 250 THEN '201-250'
+            WHEN weight > 175 AND weight <= 200 THEN '176-200'
+            ELSE '175 or under' END AS weight_group
+  FROM benn.college_football_players
+
+8. Discuss optimizing the conditions for the query above.
+
+9. (Guided) Use the benn.college_football_players database to write a query that includes players' names and a column that classifies them into four categories based on height (taller than 6'4 = "giant", between 6'0 and 6'4 is "tall", 5'4 to 5'11 is "normal" and 5'3 and below is "chiquitin".
+
+10. (Unguided) Use the benn.college_football_players database to write a query that includes players' names and a column that classifies them into four categories based on weight:
+  * SuperHeavyweight if 235+
+  * Heavyweight between 220 and 234
+  * Middleweight between 198 and 201-250
+  * Welterweight below 198
+
+11. Quick Review:
+  * Case statement always goes in the select clause
+  * Case must ALWAYS include WHEN, THEN, and END.
+  * ELSE is optional
+  * WHEN can have multiple conditionals
+  * You can have multiple WHEN statements in a select.
+
+12. (Unguided) Use the benn.mky_acquisitions table to figure out what the 100 largest acquirers are. Get the company name and the total amount spent on acquisitions.
+
+13. (Unguided) Use the same above table to categorize acquisitions in sizes: 1 billion is "tres comas club", 500 million and up are "ballers", and the others are "little poor companies"
+
+14. Joins: 		Explain that inner join is the default join and how it behaves; attaches the corresponding row on the joined table to the right hand side of the from table, based on join condition. Rows with no match are left out. Inner join is a mathematical intersection. Show how an inner join works based on this simple example:
+![Students and Teams](Team.png)
+
+
 ## Day 9: [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
 
 
