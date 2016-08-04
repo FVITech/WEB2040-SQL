@@ -26,20 +26,25 @@ This course emphasizes what developers need to know about SQL. Students go throu
 ##Day 1
 We do an intro to database concepts and the mariadb shell based on [this presentation](https://docs.google.com/presentation/d/1SKhE9PII6utJ8Wnd6ujx2WRZYdo09y__E72CWBNsFwo/edit?usp=sharing)
 
+We also solve the following exercises in mode analytics:  
+1. Select the whole table for the top 100 billboard songs in the tutorial database.
+2. Select only the top song for each year and only the year, artist and song title columns
+3.
+
 ##Day 2
-1. Write a query which returns the number of housing units for sale in each region on every month of January since 1983:  
-  Solution: select * from tutorial.us_housing_units WHERE year >= 1983 AND month = 1SELECT * FROM tutorial.us_housing_units WHERE month = <current> AND year = <one prior>
-2. Select all the month data starting on january of last year.  
+1. Write a query which returns the number of housing units for sale in each region on every month of January since 1983: (table: tutorial.us_housing_units)
+  Solution: select * from tutorial.us_housing_units WHERE year >= 1983 AND month = 1SELECT * FROM tutorial.us_housing_units WHERE month = <current> AND year > <one prior>
+2. Show all the monthly housing unit data starting on january of 2014.  
   Solution: SELECT * FROM tutorial.us_housing_units WHERE year >= 2014
-3. Select the sum of all available housing units every month through the financial crisis (2008 and onward)
+3. Show the monthly sum of all available housing units every month through the financial crisis (2008 and onward). Sum all regions into one, don't split it up by region. Your output table should have year, month, and total housing units.
   Solution: SELECT year, month, south+west+midwest+northeast FROM tutorial.us_housing_units WHERE year >= 2008
-4. Look up the total national housing units in years of crisis: 1979, 1987, 2001, 2008
+4. Show the monthly sum of all available housing units every month during years of real estate crises (1979, 1980, 2001, 2008). Sum all regions into one, don't split it up by region.
   Solution: SELECT year, month, south+west+midwest+northeast AS "Total Units" FROM tutorial.us_housing_units WHERE year IN (1979, 1987, 2001, 2008)
 5. Unguided: Find the total housing units available in the last quarter (per month) of every year since 2003
   Solution: SELECT year, month, south+west+midwest+northeast AS "Total Units" FROM tutorial.us_housing_units WHERE year >= 2003 AND month >= 10
 6. Refactor above query to restrict fields and relabel to year, month (month name) and each region:
   Solution: SELECT month_name, year, south+west+midwest+northeast AS "Total Units" FROM tutorial.us_housing_units WHERE year >= 2003 AND month >= 10
-7. Get the YEARLY sums of each region since 1987. Display the following columns: year, sum-midwest, sum-northeast, sum-south, sum-west. Make sure results are sorted.
+7. Get the YEARLY sums of each region since 1987. Display the following columns: year, sum-midwest, sum-northeast, sum-south, sum-west. Make sure results are sorted by year, oldest to newest.
   Solution:
   SELECT year, SUM(south), SUM(west), SUM(midwest), SUM(northeast)
   FROM tutorial.us_housing_units
@@ -59,9 +64,9 @@ We do an intro to database concepts and the mariadb shell based on [this present
 
 9. Unguided: Get the companies from crunchbase.companies which are located in the los angeles region. Show all columns.
   Solution: SELECT * FROM crunchbase.companies WHERE city = 'Los Angeles'
-10. Unguided: Create a table where you show the name and total funding raised (value of funding_total_usd column) for all Miami based companies.
+10. Unguided: Build a table where you show the name and total funding raised (value of funding_total_usd column) for all Miami based companies.
   Solution: SELECT name, funding_total_usd FROM crunchbase.companies WHERE city = 'Miami'
-11. Order by intro, guided: Now take the above query and sort it from greatest fund raising to lowest.
+11. Now take the above query and sort it from greatest fund raising to lowest.
   Solution: SELECT name, funding_total_usd FROM crunchbase.companies WHERE city = 'Miami' order by funding_total_usd desc
 12. Guided: Get the miami companies and their funding, sorted from most funded to least.
   SELECT name, funding_total_usd AS funding
@@ -80,7 +85,7 @@ activity in Miami. The type of investor is in the funding_round_type column. Sho
   WHERE company_region = 'Miami' AND raised_amount_usd > 0
   group by company_name
   order by raised_amount desc
-15. (Unguided) Use the tutorial.crunchbase_investments table to find the total amount raised in Miami per company category. In your results, show each company category and the amount of money that has been invested into it.
+15. (Unguided) Use the tutorial.crunchbase_investments table to find the total amount raised in Miami per company category. In your results, show each company category and the amount of money that has been invested into it, ordered descendingly.
   SELECT company_category_code, SUM(raised_amount_usd) AS raised_amount
   FROM tutorial.crunchbase_investments
   WHERE company_region = 'Miami' AND raised_amount_usd > 0
@@ -98,6 +103,17 @@ activity in Miami. The type of investor is in the funding_round_type column. Sho
                                   group by company_name)
   order by raised_amount desc
 18. Use the tutorial.crunchbase_investments table to find the 10 investors with the most money invested:
-SELECT * from (SELECT investor_name, SUM(raised_amount_usd) AS "investment" from tutorial.crunchbase_investments
+  SELECT * from (SELECT investor_name, SUM(raised_amount_usd) AS "investment"
+  from tutorial.crunchbase_investments
           group by investor_name order by investment desc) AS foo
           WHERE foo.investment > 0
+
+19. Use sqlzoo.net to practice nested selects and the sum and count sections. Students will complete at their own pace.
+
+##Day 3
+
+Build a CRUD API with node. In the past, we've done a todo app and a fundraising app. We may repeat the old exercises or instructor is free to create a new app if they see fit.
+
+##Day 4
+
+Finish the front end that ties into the CRUD api which was written on the previous day. Teach students how to set up a git remote in their FVI digital ocean space. Have students deploy their applications, polish their front ends, and take a [formative assessment](quiz1.md).
