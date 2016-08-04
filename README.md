@@ -4,12 +4,12 @@ This course emphasizes what developers need to know about SQL. Students go throu
 
 ##Summary
 1. Intro and mariaDB shell, database terms, creating tables and inserting data
-2. Select intro, nesting selects intro
-3. Nesting Selects, Select Distinct, computed columns, intro to joins
-4. Build CRUD application
-5. Exam 1
+2. Select intro, nesting selects
+3. Build CRUD application
+4. Finish CRUD application, publish to fvi-grad, quiz1.
+5. Select Distinct, computed columns, intro to joins
 6. DB Theory - normalization, entities, etc
-7. Joins Review and unions
+7. Joins Review/practice and exam review
 8. Joins Practice and exam 2
 9. Intro to Mongo
 10. Mongo part 2, introducing mongoose
@@ -197,6 +197,33 @@ Selecting Distinct records from a table:
   limit 450
 
 17. (Unguided) Consider the same two tables as above. For each college football team, show the team name, division, and average height of all team members.
+
+18. [Types of joins](https://www.khanacademy.org/computing/computer-programming/sql/relational-queries-in-sql/p/joining-related-tables)
+
+##Day 6: SQL Theory and Exam Review
+1) Download the WHOLE benn.advanced_country_debt_indicators table from mode analytics
+2) Create a new DB named countries in your local mysql instance
+3) Create a new table named country_debt with an adequate structure for the data in step 1
+4) Load the data from step 1 into the table you created on step 3:
+  ![Loading Data from Tables](load-data.png)
+5) Create a query that selects the average gdp growth for each country between the years 1990 and 2000. Show country name and gdp growth.
+6) Export your query to a file named NinetiesGDP.csv - use commas to separate the values and quotes to enclose each field
+  ![Writing Data to file](write-data.png)
+7) Create a query that sorts countries by historically highest GDP growth. Show country and GDP growth, and show only 20 results. Take all available yearly data into account. Export this query to a file named top20GDP.csv
+
+###Database theory
+[Entities, Attributes, and Relationships](https://www.youtube.com/watch?v=xNJZYX6tpWU)
+
+[Normalization](https://www.youtube.com/watch?v=K7vzLrGCV50&list=PLQ9AAKW8HuJ5m0rmHKL88ZyjOIKejvrj0)
+
+[Entity Types](https://app.pluralsight.com/player?course=relational-database-design&author=hugo-kornelis&name=rel-db-design-02-er-model&clip=2&mode=live)
+
+
+##Day 7: Joins Practice
+Complete however much is left of the [khan academy joins section](https://www.khanacademy.org/computing/computer-programming/sql/relational-queries-in-sql/p/joining-related-tables) and then do the sqlzoo join and more joins sections.
+
+
+##Day 8: Exam 1
 
 
 
