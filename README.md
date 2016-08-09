@@ -119,11 +119,11 @@ Finish the front end that ties into the CRUD api which was written on the previo
 
 
 ##Day 5
-Selecting Distinct records from a table:
+Selecting Distinct records from a table:  
 1. (Guided) Using the benn.movie_awards table, figure out how many different types of awards are covered by this data.
   SELECT distinct award_type from benn.movie_awards
 
-2. (Guided) Figure out how many of each award has been given out. Take into account there are multiple rows per award and nomination.
+2. (Guided) Figure out how many of each award has been given out. Take into account there are multiple rows per award and nomination.  
   ```sql
   SELECT award_type, count(*) as num_awards from
         (SELECT DISTINCT film_name, award_type, category
@@ -157,7 +157,7 @@ Selecting Distinct records from a table:
             ELSE '175 or under' END AS weight_group
   FROM benn.college_football_players
 
-8. Discuss optimizing the conditions for the query above.
+8. Discuss optimizing the conditions for the query above.  
 
 9. (Guided) Use the benn.college_football_players database to write a query that includes players' names and a column that classifies them into four categories based on height (taller than 6'4 = "giant", between 6'0 and 6'4 is "tall", 5'4 to 5'11 is "normal" and 5'3 and below is "chiquitin".
 
@@ -176,7 +176,7 @@ Selecting Distinct records from a table:
 
 12. (Unguided) Use the benn.mky_acquisitions table to figure out what the 100 largest acquirers are. Get the company name and the total amount spent on acquisitions.
 
-13. (Unguided) Use the same above table to categorize acquisitions in sizes: 1 billion is "tres comas club", 500 million and up are "ballers", and the others are "little poor companies"
+13. (Unguided) Use the same above table to categorize acquisitions in sizes: 1 billion is "tres comas club", 500 million and up are "ballers", and the others are "little poor companies". Show Acquirer name, total spent on acquisitions, and computed column
 
 14. Joins: Explain that inner join is the default join and how it behaves; attaches the corresponding row on the joined table to the right hand side of the from table, based on join condition. Rows with no match are left out. Inner join is a mathematical intersection. Show how an inner join works based on this simple example:
   ![Students and Teams](Team.png)
@@ -187,9 +187,9 @@ Selecting Distinct records from a table:
   Talk about what this query would produce.
 
 15. General Recipe for Join Syntax:
-  ![Join Recipe](join.png)
+  ![Join Recipe](join.png)  
 
-16. Take a look at these two tables: benn.college_football_players and benn.college_football_teams. What if you wanted the player's data plus his team's division and conference in the same table? You need a join.
+16. Take a look at these two tables: benn.college_football_players and benn.college_football_teams. What if you wanted the player's data plus his team's division and conference in the same table? You need a join. Show player name, position, height, weight, division, conference.  
   SELECT plyrs.full_school_name, plyrs.player_name, plyrs.hometown, plyrs.state,  teamz.division, teamz.conference
   from benn.college_football_players plyrs
   JOIN benn.college_football_teams teamz
