@@ -8,11 +8,11 @@ This course emphasizes what developers need to know about SQL. Students go throu
 3. Build CRUD application
 4. Finish CRUD application, publish to fvi-grad, quiz1.
 5. Select Distinct, computed columns, intro to joins
-6. DB Theory - normalization, entities, etc
-7. Joins Review/practice and exam review
-8. Joins Practice and exam 2
-9. Intro to Mongo
-10. Mongo part 2, introducing mongoose
+6. DB Theory - normalization, entities, etc. Exam review.
+7. Exam 2
+8. Intro to Mongo
+9. Mongo part 2, introducing mongoose
+10. Mongoose Crud application
 11. Mongoose Crud application
 12. Unit Final Exam
 
@@ -219,7 +219,7 @@ Selecting Distinct records from a table:
 [Entity Types](https://app.pluralsight.com/player?course=relational-database-design&author=hugo-kornelis&name=rel-db-design-02-er-model&clip=2&mode=live)
 
 
-##Day 7: Joins Practice
+##Day 7: Unions and Exam 2
 Go over the concept of SQL UNIONS and then do Exam 1.
 
 
