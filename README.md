@@ -222,7 +222,9 @@ Selecting Distinct records from a table:
 ##Day 7: Joins Practice
 Go over the concept of SQL UNIONS and then do the sqlzoo join and more joins sections. Exam 1.
 
+
 ## Day 8: [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
+=======
 
 
 1. CRUD in the [mongoshell](https://docs.mongodb.com/manual/reference/operator/query)
