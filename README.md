@@ -186,7 +186,7 @@ Selecting Distinct records from a table:
 
   Talk about what this query would produce.
 
-15. General Recipe for Join Syntax:
+15. General Recipe for Join Syntax:  
   ![Join Recipe](join.png)  
 
 16. Take a look at these two tables: benn.college_football_players and benn.college_football_teams. What if you wanted the player's data plus his team's division and conference in the same table? You need a join. Show player name, position, height, weight, division, conference.  
@@ -201,15 +201,15 @@ Selecting Distinct records from a table:
 18. [Types of joins](https://www.khanacademy.org/computing/computer-programming/sql/relational-queries-in-sql/p/joining-related-tables)
 
 ##Day 6: SQL Theory and Exam Review
-1) Download the WHOLE benn.advanced_country_debt_indicators table from mode analytics
-2) Create a new DB named countries in your local mysql instance
-3) Create a new table named country_debt with an adequate structure for the data in step 1
-4) Load the data from step 1 into the table you created on step 3:
-  ![Loading Data from Tables](load-data.png)
-5) Create a query that selects the average gdp growth for each country between the years 1990 and 2000. Show country name and gdp growth.
-6) Export your query to a file named NinetiesGDP.csv - use commas to separate the values and quotes to enclose each field
-  ![Writing Data to file](write-data.png)
-7) Create a query that sorts countries by historically highest GDP growth. Show country and GDP growth, and show only 20 results. Take all available yearly data into account. Export this query to a file named top20GDP.csv
+1. Download the WHOLE benn.advanced_country_debt_indicators table from mode analytics
+2. Create a new DB named countries in your local mysql instance
+3. Create a new table named country_debt with an adequate structure for the data in step 1
+4. Load the data from step 1 into the table you created on step 3:  
+  ![Loading Data from Tables](load-data.png)  
+5. Create a query that selects the average gdp growth for each country between the years 1990 and 2000. Show country name and gdp growth.
+6. Export your query to a file named NinetiesGDP.csv - use commas to separate the values and quotes to enclose each field  
+  ![Writing Data to file](write-data.png)  
+7. Create a query that sorts countries by historically highest GDP growth. Show country and GDP growth, and show only 20 results. Take all available yearly data into account. Export this query to a file named top20GDP.csv
 
 ###Database theory
 [Entities, Attributes, and Relationships](https://www.youtube.com/watch?v=xNJZYX6tpWU)
@@ -220,14 +220,9 @@ Selecting Distinct records from a table:
 
 
 ##Day 7: Joins Practice
-Complete however much is left of the [khan academy joins section](https://www.khanacademy.org/computing/computer-programming/sql/relational-queries-in-sql/p/joining-related-tables) and then do the sqlzoo join and more joins sections.
+Go over the concept of SQL UNIONS and then do the sqlzoo join and more joins sections. Exam 1.
 
-
-##Day 8: Exam 1
-
-
-
-## Day 9: [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
+## Day 8: [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
 
 
 1. CRUD in the [mongoshell](https://docs.mongodb.com/manual/reference/operator/query)
@@ -236,7 +231,7 @@ Complete however much is left of the [khan academy joins section](https://www.kh
 
 3. Unguided: Do Mongo Shell exercises on MongoU
 
-## Day 10: Mongoose and Schema Design
+## Day 9: Mongoose and Schema Design
 
 1. [Design User Model](scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications)
 
@@ -252,4 +247,4 @@ Complete however much is left of the [khan academy joins section](https://www.kh
 
 3. Unguided: [Kitten Schemas ](http://mongoosejs.com/docs/)
 
-## Day 11: [Designing Mongoose REST API](http://adrianmejia.com/blog/2014/10/01/creating-a-restful-api-tutorial-with-nodejs-and-mongodb/):
+## Day 10: [Designing Mongoose REST API](http://adrianmejia.com/blog/2014/10/01/creating-a-restful-api-tutorial-with-nodejs-and-mongodb/):
