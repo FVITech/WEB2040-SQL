@@ -210,6 +210,27 @@ Selecting Distinct records from a table:
 6. Export your query to a file named NinetiesGDP.csv - use commas to separate the values and quotes to enclose each field  
   ![Writing Data to file](write-data.png)  
 7. Create a query that sorts countries by historically highest GDP growth. Show country and GDP growth, and show only 20 results. Take all available yearly data into account. Export this query to a file named top20GDP.csv
+8. Which was the country with the largest debt public debt in 1999?
+9. Which are the ten countries with the highest historical debt to gdp ratio?
+10. Which was the country with the lowest GDP growth in 2008?
+11. Sql Unions. Rules for appending data:
+  1. Both tables must have the same number of columns
+  2. The columns must have the same data types in the same order as the first table
+  3. Example:
+    ![SQL union](union.png)
+12. Write a query that appends the two crunchbase_investments datasets above (including duplicate values). Filter the first dataset to only companies with names that start with the letter "T", and filter the second to companies names starting with "M" (both not case-sensitive). Only include the company_permalink, company_name, and investor_name columns.
+13. Hardcoded constants: You can add a hardcoded column by saying something like:
+  ```sql
+  select 'hardcoded value' as val, name
+  from table
+  ```
+14. You were asked by your boss to produce a query which can help him visualize how company investments change over time. Assume that the tutorial.crunchbase_investments_part1 and part2 tables are from different time periods. Write a query that shows 4 columns. The first indicates **which dataset (part 1 or 2)** the data comes from, the second is the **company permalink**, the third shows company **status**, and the fourth is a **sum of the amount of money** invested into the company. Hint: you will have to use the tutorial.crunchbase_companies table as well as the investments tables (tutorial.crunchbase_investments_part1 and part2).
+
+15. Write a query that shows 4 columns. The first is the company permalink, then company name, status, and number of investors. Make sure all companies are included. Similar to the above problem, but both data sets are lumped together now. Students should attempt to join the companies table to the union of the investments tables.
+
+16. Find out how many investments have been made into companies which are currently closed, acquired, ipo, or operating. These are possible statuses. Ignore companies with no known status.
+
+16. The next query requires you to use the following tables: derek.videogame_weekly_sales_2013_2014, derek.videogame_weekly_sales_2010, derek.videogame_weekly_sales_2011, derek.videogame_weekly_sales_2012. Show the highest grossing video games sold in the spans between 2010 and 2014, adding up xbox and ps3 sales. The tables are derek.videogame_weekly_sales_2013_2014, derek.videogame_global_weekly_sales_2010, derek.videogame_global_weekly_sales_2011, and derek.videogame_global_weekly_sales_2012
 
 ###Database theory
 [Entities, Attributes, and Relationships](https://www.youtube.com/watch?v=xNJZYX6tpWU)
@@ -219,8 +240,10 @@ Selecting Distinct records from a table:
 [Entity Types](https://app.pluralsight.com/player?course=relational-database-design&author=hugo-kornelis&name=rel-db-design-02-er-model&clip=2&mode=live)
 
 
-##Day 7: Unions and Exam 2
-Go over the concept of SQL UNIONS and then do Exam 1.
+
+
+##Day 7: Exam 2
+Sql Exam 2.
 
 
 ## Day 8: [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
