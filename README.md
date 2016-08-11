@@ -16,7 +16,11 @@ This course emphasizes what developers need to know about SQL. Students go throu
 11. Mongoose Crud application
 12. Unit Final Exam
 
-
+##Grading
+Participation/Attendance: 20%
+Homework: 10%
+In class Projects: 30%
+Unit Exams: 40%
 
 ##Homework for the Unit
 1. Complete the Codecademy SQL course.
@@ -238,8 +242,6 @@ Selecting Distinct records from a table:
 [Normalization](https://www.youtube.com/watch?v=K7vzLrGCV50&list=PLQ9AAKW8HuJ5m0rmHKL88ZyjOIKejvrj0)
 
 [Entity Types](https://app.pluralsight.com/player?course=relational-database-design&author=hugo-kornelis&name=rel-db-design-02-er-model&clip=2&mode=live)
-
-
 
 
 ##Day 7: Exam 2
