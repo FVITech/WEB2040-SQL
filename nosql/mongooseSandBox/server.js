@@ -1,50 +1,47 @@
-// import request from 'requessasat'
-// import logAllProperties from './helpers'
-import mongoose,{connection, Schema} from 'mongoose'
-import express from 'express'
-import bodyParser from 'body-parser'
-
-const app = express()
-
-app.get('/', (req,res)=>{
-  res.send('laura is the smartest and prettiest <3_<3')
-})
-
-
-mongoose.Promise = global.Promise
-
-mongoose.connect('mongodb://localhost/books')
-const db = connection
-
-db.on('error', console.error.bind(console, 'connection error: '))
-db.once('open', ()=>console.log('We are in biznazz!'))
-
-const BookSchema = new Schema({
-  title: String,
-  published:{
-    type: Date,
-    default: Date.now
-  },
-  keywords: Array,
-  published: Boolean,
-  author:{
-    type: Schema.ObjectId,
-    ref: 'User'
-  },
-  detail:{
-    modelNumber: Number,
-    hardcover: Boolean,
-    reviews: Number,
-    rank: Number
-  }
-})
-
-const Book = mongoose.model('Book', BookSchema)
-
-app.listen(8080, console.log('listening on 8080'))
-
-
-
+// import request from 'request'
+// // import logAllProperties from './helpers'
+// import mongoose,{connection, Schema} from 'mongoose'
+// import express from 'express'
+// import bodyParser from 'body-parser'
+//
+//
+//
+// const app = express()
+//
+// mongoose.Promise = global.Promise
+//
+// mongoose.connect('mongodb://localhost/books')
+// const db = connection
+//
+// db.on('error', console.error.bind(console, 'connection error: '))
+// db.once('open', ()=>console.log('We are in biznazz!'))
+//
+// const BookSchema = new Schema({
+//   title: String,
+//   published:{
+//     type: Date,
+//     default: Date.now
+//   },
+//   keywords: Array,
+//   published: Boolean,
+//   author:{
+//     type: Schema.ObjectId,
+//     ref: 'User'
+//   },
+//   detail:{
+//     modelNumber: Number,
+//     hardcover: Boolean,
+//     reviews: Number,
+//     rank: Number
+//   }
+// })
+//
+// const Book = mongoose.model('Book', BookSchema)
+//
+// app.listen(8080, console.log('listening on 8080'))
+//
+//
+//
 
 
 
@@ -266,28 +263,32 @@ app.listen(8080, console.log('listening on 8080'))
 
 
 // //Protoypes
-// const witch = "I'll get you, my pretty... and your little dog too!"
-// const scarecrow = "Some people without brains do an awful lot of talking."
-// const glinda = "Be gone! Before someone drops a house on you!"
-// const dorothy = "There's no place like home."
-// const lion = "Come on, get up and fight, you shivering junkyard!"
-// const wizard = "Do not arouse the wrath of the great and powerful Oz!"
-// const tinman = "Now I know I have a heart, because it's breaking"
+const witch = "I'll get you, my pretty... and your little dog too!"
+const scarecrow = "Some people without brains do an awful lot of talking."
+const glinda = "Be gone! Before someone drops a house on you!"
+const dorothy = "There's no place like home."
+const lion = "Come on, get up and fight, you shivering junkyard!"
+const wizard = "Do not arouse the wrath of the great and powerful Oz!"
+const tinman = "Now I know I have a heart, because it's breaking"
 //
 //
-// //explain normalizing data with toUpperCase
-// String.prototype.countAll =  function(letterToSearchFor) {
-//     let letterCount=0
-//     for (var i = 0; i < this.length; i++) {
-//       if(letterToSearchFor.toUpperCase()){
-//         letterCount++
-//       }
-//
-//     }
-//     return letterCount
-// }
-//
-// console.log(witch.countAll('o'))
+
+
+
+
+//explain normalizing data with toUpperCase
+String.prototype.countAll =  function(letterToSearchFor) {
+    let letterCount=0
+    for (var i = 0; i < this.length; i++) {
+      if(this[i].toUpperCase()===letterToSearchFor.toUpperCase()){
+        letterCount++
+      }
+
+    }
+    return letterCount
+}
+
+console.log('hello'.countAll('o'))
 //
 //
 // //Inheritance
