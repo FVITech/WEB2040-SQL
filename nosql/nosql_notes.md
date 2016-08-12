@@ -37,6 +37,10 @@
    db.movies.update({"title": "Jaws"}, {$set:{"title": 'Little Mermaid'}})
    db.movies.update({"title": "Jaws"}, {$unset:{"year": 'whatever'}})
    ```
+   - Upserts: Update, if none, create it
+  ```js
+  db.people.update({name:Charlie},{$set{age:40}},{upsert:1})
+  ```
    - Warning: `update()` without set does a wholesale update. eg:
    `db.movies.update({title:"Jaws"},{title:'Little Mermaid'})`
 
