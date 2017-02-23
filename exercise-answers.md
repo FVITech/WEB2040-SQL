@@ -1,21 +1,26 @@
 ##Day 2
-1. Write a query which returns the number of housing units for sale in each region on every month of January since 1983: (table: tutorial.us_housing_units)  
+1. Write a query which returns the number of housing units for sale in each region on every month of January since 1983: (table: tutorial.us_housing_units)    
   ```sql
-  select * from tutorial.us_housing_units WHERE year >= 1983 AND month = 1SELECT * FROM tutorial.us_housing_units WHERE month = <current> AND year > <one prior>  
-  ```  
+
+  SELECT * FROM tutorial.us_housing_units WHERE year >= 1983 AND month = 1
+
+  ```
+
 2. Show all the monthly housing unit data starting on january of 2014.    
-    ```sql
+
+  ```sql
   SELECT * FROM tutorial.us_housing_units WHERE year >= 2014  
   ```
 
-3. Show the monthly sum of all available housing units every month through the financial crisis (2008 and onward). Sum all regions into one, don't split it up by region. Your output table should have year, month, and total housing units.  
-  Solution:
+3. Show the monthly sum of all available housing units every month through the financial crisis (2008 and onward). Sum all regions into one, don't split it up by region. Your output table should have year, month, and total housing units.  Solution:
+
     ```sql
+
     SELECT year, month, south+west+midwest+northeast FROM tutorial.us_housing_units WHERE year >= 2008  
     ```
-4. Show the monthly sum of all available housing units every month during years of real estate crises (1979, 1980, 2001, 2008). Sum all regions into one, don't split it up by region.  
-  Solution:
+4. Show the monthly sum of all available housing units every month during years of real estate crises (1979, 1980, 2001, 2008). Sum all regions into one, don't split it up by region. Solution:
     ```sql
+
     SELECT year, month, south+west+midwest+northeast AS "Total Units" FROM tutorial.us_housing_units WHERE year IN (1979, 1987, 2001, 2008)  
     ```
 5. Unguided: Find the total housing units available in the last quarter (per month) of every year since 2003  
