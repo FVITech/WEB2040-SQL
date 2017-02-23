@@ -26,27 +26,28 @@
     SELECT year, month, south+west+midwest+northeast AS "Total Units"
     FROM tutorial.us_housing_units WHERE year IN (1979, 1987, 2001, 2008)  
     ```
-5. Unguided: Find the total housing units available in the last quarter (per month) of every year since 2003  
-  Solution:
+5. Unguided: Find the total housing units available in the last quarter (per month) of every year since 2003. Solution:  
+
     ```sql
     SELECT year, month, south+west+midwest+northeast AS "Total Units"
     FROM tutorial.us_housing_units WHERE year >= 2003 AND month >= 10  
     ```
-6. Refactor above query to restrict fields and relabel to year, month (month name) and each region:  
-  Solution:
+6. Refactor above query to restrict fields and relabel to year, month (month name) and each region:  Solution:  
+
     ```sql
     SELECT month_name, year, south+west+midwest+northeast AS "Total Units"
     FROM tutorial.us_housing_units WHERE year >= 2003 AND month >= 10  
     ```
-7. Get the YEARLY sums of each region since 1987. Display the following columns: year, sum-midwest, sum-northeast, sum-south, sum-west. Make sure results are sorted by year, oldest to newest.  
-  Solution:  
+
+7. Get the YEARLY sums of each region since 1987. Display the following columns: year, sum-midwest, sum-northeast, sum-south, sum-west. Make sure results are sorted by year, oldest to newest. Solution:  
+
     ```sql
     SELECT year, SUM(south), SUM(west), SUM(midwest), SUM(northeast)  
-  FROM tutorial.us_housing_units  
-  WHERE year >= 1987  
-   GROUP BY year  
-  ORDER BY year  
-  ```
+    FROM tutorial.us_housing_units  
+    WHERE year >= 1987  
+    GROUP BY year  
+    ORDER BY year  
+    ```
 8. Now modify that query from above so you get the yearly AVERAGE rather than sum. Round to the nearest hundredth.  
   Solution:  
     ```sql
@@ -75,7 +76,9 @@
 11. Now take the above query and sort it from greatest fund raising to lowest. Solution:  
 
   ```sql
-  SELECT name, funding_total_usd FROM crunchbase.companies WHERE city = 'Miami' order by funding_total_usd desc  
+  SELECT name, funding_total_usd
+  FROM crunchbase.companies
+  WHERE city = 'Miami' order by funding_total_usd desc  
   ```
 12. Guided: Get the miami companies and their funding, sorted from most funded to least.  
 
@@ -95,31 +98,33 @@ activity in Miami. The type of investor is in the funding_round_type column. Sho
     order by raised_amount_usd desc  
   ```
 14. (Unguided) Use the tutorial.crunchbase_investments table to find the total amount raised by each company in Miami. In your results, show the company name, and the total amount raised. Sort by amount raised (greater to smaller)  
-    ```sql
-    SELECT company_name, SUM(raised_amount_usd) AS raised_amount  
+
+  ```sql
+  SELECT company_name, SUM(raised_amount_usd) AS raised_amount  
   FROM tutorial.crunchbase_investments  
   WHERE company_region = 'Miami' AND raised_amount_usd > 0  
   group by company_name  
   order by raised_amount desc  
   ```
 15. (Unguided) Use the tutorial.crunchbase_investments table to find the total amount raised in Miami per company category. In your results, show each company category and the amount of money that has been invested into it, ordered descendingly.  
+
     ```sql
     SELECT company_category_code, SUM(raised_amount_usd) AS raised_amount  
-  FROM tutorial.crunchbase_investments  
-  WHERE company_region = 'Miami' AND raised_amount_usd > 0  
-  group by company_category_code  
-  order by raised_amount desc  
-  ```
-17. Use the tutorial.crunchbase_investments table to find all the companies nationwide which have raised more money than brightstar  
-  Solution:  
-    ```sql
-    SELECT company_name, SUM(raised_amount_usd) AS raised_amount  
+    FROM tutorial.crunchbase_investments  
+    WHERE company_region = 'Miami' AND raised_amount_usd > 0  
+    group by company_category_code  
+    order by raised_amount desc  
+    ```
+17. Use the tutorial.crunchbase_investments table to find all the companies nationwide which have raised more money than brightstar. Solution:  
+
+  ```sql
+  SELECT company_name, SUM(raised_amount_usd) AS raised_amount  
   FROM tutorial.crunchbase_investments  
   group by company_name  
   having SUM(raised_amount_usd) > (SELECT SUM(raised_amount_usd)  
-                                  from tutorial.crunchbase_investments  
-                                  WHERE company_name = 'Brightstar'  
-                                  group by company_name)  
+                                from tutorial.crunchbase_investments  
+                                WHERE company_name = 'Brightstar'  
+                                group by company_name)  
   order by raised_amount desc  
   ```
 
