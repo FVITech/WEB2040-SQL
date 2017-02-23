@@ -16,22 +16,27 @@
 
     ```sql
 
-    SELECT year, month, south+west+midwest+northeast FROM tutorial.us_housing_units WHERE year >= 2008  
+    SELECT year, month, south+west+midwest+northeast
+    FROM tutorial.us_housing_units
+    WHERE year >= 2008  
     ```
 4. Show the monthly sum of all available housing units every month during years of real estate crises (1979, 1980, 2001, 2008). Sum all regions into one, don't split it up by region. Solution:
     ```sql
 
-    SELECT year, month, south+west+midwest+northeast AS "Total Units" FROM tutorial.us_housing_units WHERE year IN (1979, 1987, 2001, 2008)  
+    SELECT year, month, south+west+midwest+northeast AS "Total Units"
+    FROM tutorial.us_housing_units WHERE year IN (1979, 1987, 2001, 2008)  
     ```
 5. Unguided: Find the total housing units available in the last quarter (per month) of every year since 2003  
   Solution:
     ```sql
-    SELECT year, month, south+west+midwest+northeast AS "Total Units" FROM tutorial.us_housing_units WHERE year >= 2003 AND month >= 10  
+    SELECT year, month, south+west+midwest+northeast AS "Total Units"
+    FROM tutorial.us_housing_units WHERE year >= 2003 AND month >= 10  
     ```
 6. Refactor above query to restrict fields and relabel to year, month (month name) and each region:  
   Solution:
     ```sql
-    SELECT month_name, year, south+west+midwest+northeast AS "Total Units" FROM tutorial.us_housing_units WHERE year >= 2003 AND month >= 10  
+    SELECT month_name, year, south+west+midwest+northeast AS "Total Units"
+    FROM tutorial.us_housing_units WHERE year >= 2003 AND month >= 10  
     ```
 7. Get the YEARLY sums of each region since 1987. Display the following columns: year, sum-midwest, sum-northeast, sum-south, sum-west. Make sure results are sorted by year, oldest to newest.  
   Solution:  
@@ -46,13 +51,13 @@
   Solution:  
     ```sql
     SELECT year, ROUND(CAST(AVG(south) AS numeric),2) AS "South",  
-  ROUND(CAST(AVG(west) AS numeric) ,2) as "West",  
-  ROUND(CAST(AVG(midwest) AS numeric),2) as "Midwest",  
-  ROUND(CAST(AVG(northeast) AS numeric),2) AS "Northeast"  
-  FROM tutorial.us_housing_units  
-  WHERE year >= 1987  
-  GROUP BY year  
-  ORDER BY year  
+          ROUND(CAST(AVG(west) AS numeric) ,2) as "West",  
+          ROUND(CAST(AVG(midwest) AS numeric),2) as "Midwest",  
+          ROUND(CAST(AVG(northeast) AS numeric),2) AS "Northeast"  
+    FROM tutorial.us_housing_units  
+    WHERE year >= 1987  
+    GROUP BY year  
+    ORDER BY year  
   ```
 
 9. Unguided: Get the companies from crunchbase.companies which are located in the los angeles region. Show all columns.  
@@ -60,30 +65,34 @@
     ```sql
     SELECT * FROM crunchbase.companies WHERE city = 'Los Angeles'  
     ```
-10. Unguided: Build a table where you show the name and total funding raised (value of funding_total_usd column) for all Miami based companies.  
-  Solution:   
+10. Unguided: Build a table where you show the name and total funding raised (value of funding_total_usd column) for all Miami based companies. Solution:   
+
   ```sql
+
   SELECT name, funding_total_usd FROM crunchbase.companies WHERE city = 'Miami'  
   ```
-11. Now take the above query and sort it from greatest fund raising to lowest.  
-  Solution:
-    ```sql
-    SELECT name, funding_total_usd FROM crunchbase.companies WHERE city = 'Miami' order by funding_total_usd desc  
-    ```
+
+11. Now take the above query and sort it from greatest fund raising to lowest. Solution:  
+
+  ```sql
+  SELECT name, funding_total_usd FROM crunchbase.companies WHERE city = 'Miami' order by funding_total_usd desc  
+  ```
 12. Guided: Get the miami companies and their funding, sorted from most funded to least.  
-    ```sql
+
+  ```sql
     SELECT name, funding_total_usd AS funding  
-  FROM tutorial.crunchbase_companies  
-  WHERE region = 'Miami'  
-  order by funding desc  
+      FROM tutorial.crunchbase_companies  
+      WHERE region = 'Miami'  
+      order by funding desc  
   ```
 13. In the tutorial.crunchbase_investments table, find all angel investor
 activity in Miami. The type of investor is in the funding_round_type column. Show the company name, investor name, and raised amount. Sort it by the raised amount (desc).  
-    ```sql
+
+  ```sql
     SELECT company_name, investor_name, raised_amount_usd  
-  FROM tutorial.crunchbase_investments  
-  WHERE investor_region = 'Miami' AND raised_amount_usd > 0 AND funding_round_type = 'angel'
-  order by raised_amount_usd desc  
+    FROM tutorial.crunchbase_investments  
+    WHERE investor_region = 'Miami' AND raised_amount_usd > 0 AND funding_round_type = 'angel'
+    order by raised_amount_usd desc  
   ```
 14. (Unguided) Use the tutorial.crunchbase_investments table to find the total amount raised by each company in Miami. In your results, show the company name, and the total amount raised. Sort by amount raised (greater to smaller)  
     ```sql
