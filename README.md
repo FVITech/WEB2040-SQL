@@ -1,8 +1,8 @@
-#WEB2040: Databases
+# WEB2040: Databases
 
 This course emphasizes what developers need to know about SQL. Students go through ample practice with nested selects and joins, loading pre-existing datasets into a sql database using the shell, locating and fixing errors in a table, understanding foreign keys and relationships between entities, and creating tables of appropriate data types. An intro to noSQL is also given, with some basic exercises. This course also serves as a Node.JS introduction and AJAX refresher, as students develop CRUD APIs on nodeJS working on a SQL database as well as on noSQL.
 
-##Summary
+## Summary
 1. Intro and mariaDB shell, database terms, creating tables and inserting data
 2. Select intro, nesting selects
 3. Build CRUD application
@@ -16,25 +16,25 @@ This course emphasizes what developers need to know about SQL. Students go throu
 11. Mongoose Crud application
 12. Unit Final Exam
 
-##Grading
+## Grading
 Participation/Attendance: 20%
 Homework: 10%
 In class Projects: 30%
 Unit Exams: 40%
 
-##Homework for the Unit
+## Homework for the Unit
 1. Complete the Codecademy SQL course.
 2. Complete the TeamTreehouse SQL basics course.
 3. Complete the TeamTreehouse "Modifying Data with SQL" course
 
-##Day 1
+## Day 1
 We do an intro to database concepts and the mariadb shell based on [this presentation](https://docs.google.com/presentation/d/1SKhE9PII6utJ8Wnd6ujx2WRZYdo09y__E72CWBNsFwo/edit?usp=sharing)
 
 We also solve the following exercises in mode analytics:  
 1. Select the whole table for the top 100 billboard songs in the tutorial database.
 2. Select only the top song for each year and only the year, artist and song title columns
 
-##Day 2
+## Day 2
 1. Write a query which returns the number of housing units for sale in each region on every month of January since 1983: (table: tutorial.us_housing_units)
 
 2. Show all the monthly housing unit data starting on january of 2014.  
@@ -75,18 +75,18 @@ activity in Miami. The type of investor is in the funding_round_type column. Sho
 
 19. Use sqlzoo.net to practice nested selects and the sum and count sections. Students will complete at their own pace.
 
-##Day 3
+## Day 3
 
 Build a CRUD API with node. In the past, we've done a todo app and a fundraising app. We may repeat the old exercises or instructor is free to create a new app if they see fit.
 
-##Day 4
+## Day 4
 
 Finish the front end that ties into the CRUD api which was written on the previous day. Teach students how to set up a git remote in their FVI digital ocean space. Have students deploy their applications, run them from the remote server, polish their front ends, make changes to their front ends so that they work by connecting to the fvi-grad remote, and take a [formative assessment](quiz1.md).
 
 **Also make sure to discuss the three servers involved in this application: apache, node, mysql.**
 
 
-##Day 5
+## Day 5
 Selecting Distinct records from a table:  
 1. (Guided) Using the benn.movie_awards table, figure out how many different types of awards are covered by this data.
   SELECT distinct award_type from benn.movie_awards
@@ -168,7 +168,7 @@ Selecting Distinct records from a table:
 
 18. [Types of joins](https://www.khanacademy.org/computing/computer-programming/sql/relational-queries-in-sql/p/joining-related-tables)
 
-##Day 6: SQL Theory and Exam Review
+## Day 6: SQL Theory and Exam Review
 1. Download the WHOLE benn.advanced_country_debt_indicators table from mode analytics
 2. Create a new DB named countries in your local mysql instance
 3. Create a new table named country_debt with an adequate structure for the data in step 1
@@ -200,7 +200,7 @@ Selecting Distinct records from a table:
 
 16. The next query requires you to use the following tables: derek.videogame_weekly_sales_2013_2014, derek.videogame_weekly_sales_2010, derek.videogame_weekly_sales_2011, derek.videogame_weekly_sales_2012. Show the highest grossing video games sold in the spans between 2010 and 2014, adding up xbox and ps3 sales. The tables are derek.videogame_weekly_sales_2013_2014, derek.videogame_global_weekly_sales_2010, derek.videogame_global_weekly_sales_2011, and derek.videogame_global_weekly_sales_2012
 
-###Database theory
+### Database theory
 [Entities, Attributes, and Relationships](https://www.youtube.com/watch?v=xNJZYX6tpWU)
 
 [Normalization](https://www.youtube.com/watch?v=K7vzLrGCV50&list=PLQ9AAKW8HuJ5m0rmHKL88ZyjOIKejvrj0)
@@ -208,7 +208,7 @@ Selecting Distinct records from a table:
 [Entity Types](https://app.pluralsight.com/player?course=relational-database-design&author=hugo-kornelis&name=rel-db-design-02-er-model&clip=2&mode=live)
 
 
-##Day 7: Exam 2
+## Day 7: Exam 2
 Sql Exam 2.
 
 
@@ -226,13 +226,13 @@ Sql Exam 2.
 
 1. [Design User Model](scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications)
 
-  1. Prototype refresher on codeschool
-  2. Explain the concepts of Schemas and Models
+    1. Prototype refresher on codeschool
+    2. Explain the concepts of Schemas and Models
   >In mongoose, a schema represents the structure of a particular document, either completely or just a portion of the document. It's a way to express expected properties and values as well as constraints and indexes. A model defines a programming interface for interacting with the database (read, insert, update, etc). So a schema answers "what will the data in this collection look like?" and a model provides functionality like "Are there any records matching this query?" or "Add a new document to the collection".
 
-  3. Review objects and how mongoose has keywords
-  4. Setup a Project
-  5. Develop Schemas and check the mongo shell
+    3. Review objects and how mongoose has keywords
+    4. Setup a Project
+    5. Develop Schemas and check the mongo shell
 
 2. [Design Book Schemas](https://www.udemy.com/mongoosejs-essentials)
 
