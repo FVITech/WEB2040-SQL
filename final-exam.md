@@ -1,4 +1,4 @@
-#WEB2040 final example
+# WEB2040 final example
 
 1. Which of the following is a valid insert statement in mongodb? (5 pts)  
     1. db.test.insert({x:2,y:"apple"})  
@@ -31,7 +31,7 @@
 
 6. Given a collection named students, where the documents have first_name and last_name properties, how would you write a mondogb query that looks up all students with the last name "Castro"? (5 pts)  
 
-    Dada una coleccion llamada students, donde los documentos tienen campus first_name y last_name, como escribiria un query en mongodb para encontrar a todos los estudiantes que tengan el apellido "Castro"?
+    Dada una coleccion llamada students, donde los documentos tienen campos de nombre first_name y last_name, como escribiria un query en mongodb para encontrar a todos los estudiantes que tengan el apellido "Castro"?
 
 8. Do all the problems in this page: http://sqlzoo.net/wiki/Guest_House_Assessment_Easy (40 pts)
 
@@ -44,3 +44,4 @@
         3. Author
     2. The server should connect to mongodb using mongoose
     3. There should be a route capable of displaying all the contents of a database called notes-app and a collection called notes. The results should be sent back to the client in json format. The route should be called "showallnotes"
+    4. Put the answers to the text questions and the screenshots to the results of the SQL problems in this repo, then submit to Canvas.
