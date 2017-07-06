@@ -1,4 +1,4 @@
-# WEB2040 final example
+# WEB2040 Final Exam
 
 1. Which of the following is a valid insert statement in mongodb? (5 pts)  
     1. db.test.insert({x:2,y:"apple"})  
